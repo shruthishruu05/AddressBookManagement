@@ -77,7 +77,7 @@ class Contact {
         else throw 'zip is incorrect'
     }
     set phone(phone) {
-        let phoneRegex = RegExp("^[0-9]{1,2}\\s{1}[0-9]{10}$");
+        let phoneRegex = RegExp("^[0-9]{2}\\s{1}[0-9]{10}$");
         if(phoneRegex.test(phone))
         this._phone = phone;
         else throw 'phone number is incorrect'
@@ -94,10 +94,29 @@ class Contact {
 
 }
 try{
-let contact = new Contact('Shruthi','Gowda','Jaynagar','Bangalore','Karnataka',560076,'9110884694','shru@gmail.com');
+let contact = new Contact('Shruthi','Gowda','Jaynagar','Bangalore','Karnataka',560076,'91 9110884694','shru@gmail.com');
 console.log("Contact: "+contact)
 }
 catch(e)
 {
     console.error(e);
 }
+
+let addressBookArray = new Array();
+try{
+    addressBookArray.push(new Contact('Shruthi','Gowda','Jaynagar','Bangalore','Karnataka',560076,'91 9110884694','shru@gmail.com'));
+}
+catch(e){
+    console.log(e);
+}
+try{
+    addressBookArray.push(new Contact("Mahesh", "Kumar", "jaynagar", "Bangalore", "Karnataka", "560070", "91 7899387072", "mahesh@gmail.com"));
+}catch(e){
+    console.error(e);
+}
+try{
+    addressBookArray.push(new Contact("Chinmai", "Kanth", "RrNagar", "Bangalore", "Karnataka", "560072", "91 9535082363", "chins@gmail.com"));
+}catch(e){
+    console.error(e);
+}
+console.log(addressBookArray);
