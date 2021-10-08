@@ -120,3 +120,40 @@ try{
     console.error(e);
 }
 console.log(addressBookArray);
+
+findByName("Shruthi","email","shru@gmail.com");
+
+console.log(contactArray);
+
+function findByNameAndEdit(firstName,attribute, value){
+    let contact = contactArray.find(contact => contact._firstName == firstName);
+    if(contact == null) console.log("name not found");
+    switch(attribute){
+        case "firstName":
+            contact._firstName = value;
+            break;
+        case "lastName":
+            contact._lastName = value;
+            break;
+        case "address":
+            contact._address = value;
+            break;
+        case "city":
+            contact._city = value;
+            break;
+        case "state":
+            contact._state = value;
+            break;
+        case "zip":
+            contact._zip = value;
+            break;
+        case "phone":
+            contact._phone = value;
+            break;
+        case "email":
+            contact._email = value;
+            break;
+        default:
+            console.log("wrong attribute is specified");
+    }
+}
