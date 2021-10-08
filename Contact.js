@@ -209,3 +209,28 @@ function searchInAState(firstName,state){
 
 searchInACity("Shruthi","Bangalore");
 searchInAState("Chinmai","Karnataka");
+
+function contactsInCity(city){
+    let peopleInGivenCity = addressBookArray.filter(contact => contact._city == city);
+    if(peopleInGivenCity.length == 0) { 
+        console.log("\ncity not found");
+    }
+    else {
+        console.log("\nContacts in city "+ city+ " are/is:");
+        console.log(peopleInGivenCity);
+    }
+}
+
+function contactsInState(state){
+    let peopleInGivenState = addressBookArray.filter(contact => contact._state == state);
+    if(peopleInGivenState.length == 0) { 
+        console.log("\nstate not found");
+    }
+    else {
+        console.log("\nContacts in state "+ state+ " are/is:");
+        console.log(peopleInGivenState);
+    }
+}
+
+contactsInCity("Bangalore");
+contactsInState("Karnataka");
