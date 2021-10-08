@@ -234,3 +234,17 @@ function contactsInState(state){
 
 contactsInCity("Bangalore");
 contactsInState("Karnataka");
+
+function getCountByCity(city){
+    let numberOfContacts = addressBookArray.filter(contact => contact._city == city)
+                                       .reduce(numberOfContacts => numberOfContacts+1,0);
+    return numberOfContacts;
+}
+function getCountByState(state){
+    let numberOfContacts = addressBookArray.filter(contact => contact._state == state)
+                                       .reduce(numberOfContacts => numberOfContacts+1,0);
+    return numberOfContacts;
+}
+
+console.log("number of persons in Bangalore:" + getCountByCity("Bangalore"));
+console.log("number of persons in Karnataka:" + getCountByState("Karnataka"));
