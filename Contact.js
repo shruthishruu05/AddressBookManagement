@@ -168,3 +168,10 @@ function deleteByName(firstName,lastName){
 deleteByName("Chinmai","Kanth");
 console.log("\n after deleting contact in addressBook:")
 console.log(addressBookArray);
+
+function getCount(){
+    let numberOfContacts = addressBookArray.reduce((numberOfContacts,contact) => numberOfContacts +=1,0);
+    return numberOfContacts;
+}
+
+console.log("number of contacts : "+getCount());
