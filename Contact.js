@@ -268,3 +268,46 @@ function SortByName(){
 SortByName();
 console.log("sortedArray based on name: ")
 console.log(addressBookArray);
+
+
+function SortByZip(){
+    addressBookArray.sort((contact1,contact2) =>{
+        if(contact1._zip > contact2._zip)
+            return 1;
+        else if(contact1._zip < contact2._zip)
+            return -1;
+        else 0;
+    })
+}
+
+function SortByCity(){
+    addressBookArray.sort((contact1,contact2) =>{
+        if(contact1._city > contact2._city)
+            return 1;
+        else if(contact1._city < contact2._city)
+            return -1;
+        else 0;
+    })
+}
+
+function SortByState(){
+    addressBookArray.sort((contact1,contact2) =>{
+        if(contact1._state > contact2._state)
+            return 1;
+        else if(contact1._state < contact2._state)
+            return -1;
+        else 0;
+    })
+}
+
+SortByZip();
+console.log("sortedArray based on Zip: ")
+console.log(addressBookArray);
+
+SortByCity();
+console.log("sortedArray based on City: ")
+console.log(addressBookArray);
+
+SortByState();
+console.log("sortedArray based on State: ")
+console.log(addressBookArray);
