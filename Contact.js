@@ -248,3 +248,23 @@ function getCountByState(state){
 
 console.log("number of persons in Bangalore:" + getCountByCity("Bangalore"));
 console.log("number of persons in Karnataka:" + getCountByState("Karnataka"));
+
+function SortByName(){
+    addressBookArray.sort((contact1,contact2) =>{
+        if(contact1._firstName > contact2._firstName)
+            return 1;
+        else if(contact1._firstName < contact2._firstName)
+            return -1;
+        else {
+            if(contact1._lastName > contact2._lastName)
+            return 1;
+            else if(contact1._lastName < contact2._lastName)
+            return -1;
+            else return 0;
+        }
+    })
+}
+
+SortByName();
+console.log("sortedArray based on name: ")
+console.log(addressBookArray);
