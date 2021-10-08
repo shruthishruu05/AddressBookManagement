@@ -185,3 +185,27 @@ function checkDuplicatedAndAdd(contact){
 }
 
 checkDuplicatedAndAdd(new Contact("Mahesh", "Kumar", "jaynagar", "Bangalore", "Karnataka", "560070", "91 7899387072", "mahesh@gmail.com"));
+
+function searchInACity(firstName,city){
+    let peopleInGivenCity = addressBookArray.filter(contact => contact._firstName == firstName && contact._city == city);
+    if(peopleInGivenCity.length == 0) { 
+        console.log("\nno contact named "+ firstName+ " is found in city "+ city);
+    }
+    else {
+        console.log("\nContacts named "+ firstName+" in city "+ city+ " are/is:");
+        console.log(peopleInGivenCity);
+    }
+}
+function searchInAState(firstName,state){
+    let peopleInGivenState = addressBookArray.filter(contact => contact._firstName == firstName && contact._state == state);
+    if(peopleInGivenState.length == 0) {
+        console.log("\nno contact named "+ firstName+ " is found in state "+ state);
+    }
+    else{
+        console.log("\nContacts named "+ firstName+" in state "+ state+ " are/is:");
+        console.log(peopleInGivenState);
+    }
+}
+
+searchInACity("Shruthi","Bangalore");
+searchInAState("Chinmai","Karnataka");
