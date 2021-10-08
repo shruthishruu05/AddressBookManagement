@@ -175,3 +175,13 @@ function getCount(){
 }
 
 console.log("number of contacts : "+getCount());
+
+function checkDuplicatedAndAdd(contact){
+    let duplicate = addressBookArray.find(currentContact => currentContact._firstName == contact._firstName && currentContact._lastName == contact._lastName);
+    if(duplicate == null){
+        addressBookArray.push(contact);
+    }
+    else console.log("the contact already exists");
+}
+
+checkDuplicatedAndAdd(new Contact("Mahesh", "Kumar", "jaynagar", "Bangalore", "Karnataka", "560070", "91 7899387072", "mahesh@gmail.com"));
