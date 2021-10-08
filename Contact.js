@@ -93,14 +93,14 @@ class Contact {
     }
 
 }
-try{
-let contact = new Contact('Shruthi','Gowda','Jaynagar','Bangalore','Karnataka',560076,'91 9110884694','shru@gmail.com');
-console.log("Contact: "+contact)
-}
-catch(e)
-{
-    console.error(e);
-}
+// try{
+// let contact = new Contact('Shruthi','Gowda','Jaynagar','Bangalore','Karnataka',560076,'91 9110884694','shru@gmail.com');
+// console.log("Contact: "+contact)
+// }
+// catch(e)
+// {
+//     console.error(e);
+// }
 
 let addressBookArray = new Array();
 try{
@@ -120,13 +120,14 @@ try{
     console.error(e);
 }
 console.log(addressBookArray);
+findByNameAndEdit("Shruthi","email","shruthi.hp@perfios.com");
+console.log("\n after editing data in addressBook:")
+console.log(addressBookArray);
 
-findByName("Shruthi","email","shru@gmail.com");
+ addressBookArray = new Array();
 
-console.log(contactArray);
-
-function findByNameAndEdit(firstName,attribute, value){
-    let contact = contactArray.find(contact => contact._firstName == firstName);
+ function findByNameAndEdit(firstName,attribute, value){
+    let contact = addressBookArray.find(contact => contact._firstName == firstName);
     if(contact == null) console.log("name not found");
     switch(attribute){
         case "firstName":
@@ -157,3 +158,13 @@ function findByNameAndEdit(firstName,attribute, value){
             console.log("wrong attribute is specified");
     }
 }
+
+
+function deleteByName(firstName,lastName){
+    let index  = addressBookArray.findIndex(contact => contact._firstName == firstName && contact._lastName == lastName);
+    addressBookArray.splice(index,1);
+}
+
+deleteByName("Chinmai","Kanth");
+console.log("\n after deleting contact in addressBook:")
+console.log(addressBookArray);
